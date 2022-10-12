@@ -1,6 +1,8 @@
 pipeline {
     agent any
-properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '3', numToKeepStr: '5')), disableConcurrentBuilds(), gitLabConnection(gitLabConnection: 'https://github.com/udi1990/terrraform-eks', jobCredentialId: '')])        stage('Hello1') {
+option { buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '3', numToKeepStr: '5')), 
+disableConcurrentBuilds(), gitLabConnection(gitLabConnection: 'https://github.com/udi1990/terrraform-eks', jobCredentialId: '') }       
+    stage('Hello1') {
             steps {
                sh '''
             ls
